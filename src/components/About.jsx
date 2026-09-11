@@ -17,7 +17,7 @@ export default function About() {
     {
       icon: Database,
       title: "Database Modeling",
-      description: "Designing schema relationships and indexing in MongoDB and MySQL for optimal query execution."
+      description: "Designing schema relationships and indexing in PostgreSQL (Supabase) and MySQL for optimal query execution."
     },
     {
       icon: Cpu,

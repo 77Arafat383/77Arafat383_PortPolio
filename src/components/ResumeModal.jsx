@@ -239,7 +239,7 @@ export default function ResumeModal({ onClose }) {
                     <span className="font-bold text-gray-900">Frontend Web:</span> React.js, Vite, Tailwind CSS, HTML5/CSS3
                   </div>
                   <div>
-                    <span className="font-bold text-gray-900">Database Systems:</span> MongoDB, MySQL (Schema Design, Indexing)
+                    <span className="font-bold text-gray-900">Database Systems:</span> PostgreSQL (Supabase), MySQL (Schema Design, Indexing)
                   </div>
                   <div>
                     <span className="font-bold text-gray-900">Tools & Environment:</span> Git, GitHub, VS Code, Postman, Linux
