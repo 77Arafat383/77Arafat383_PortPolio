@@ -15,26 +15,48 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
     setLoading(true);
-    
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormState({ name: '', email: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 800);
+
+    const subject = `[Portfolio] Message from ${formState.name}`;
+    const body = `Hi Yeasin Arafat,\n\nYou received a new message from your Portfolio website:\n\nName: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}\n\nBest regards,\n${formState.name}`;
+
+    try {
+      await fetch(`https://formsubmit.co/ajax/${profileData.email}`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: subject,
+          name: formState.name,
+          email: formState.email,
+          message: formState.message
+        })
+      });
+    } catch (err) {
+      console.warn('FormSubmit endpoint error, falling back to mailto:', err);
+    }
+
+    const mailtoUrl = `mailto:${profileData.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+
+    setLoading(false);
+    setSubmitted(true);
+    setFormState({ name: '', email: '', message: '' });
+    setTimeout(() => setSubmitted(false), 6000);
   };
 
   return (
     <section id="contact" className="py-24 relative bg-[#0a0a0c] overflow-hidden">
-      
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-r from-indigo-600/15 via-purple-600/10 to-cyan-500/15 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         <div className="flex flex-col items-center text-center mb-16 space-y-3">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono text-indigo-400 bg-indigo-500/10 border border-indigo-500/20">
             <Sparkles size={13} /> Get In Touch
@@ -48,11 +70,11 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           <div className="lg:col-span-5 space-y-6 text-left">
-            
+
             <div className="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
-              
+
               <div className="space-y-2">
                 <h3 className="text-xl font-bold text-white flex items-center gap-2">
                   <MessageSquare size={20} className="text-indigo-400" />
@@ -166,7 +188,7 @@ export default function Contact() {
 
           <div className="lg:col-span-7">
             <div className="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6 text-left">
-              
+
               <div className="space-y-1">
                 <h3 className="text-xl font-bold text-white">Send a Direct Message</h3>
                 <p className="text-xs text-gray-400">
@@ -177,7 +199,7 @@ export default function Contact() {
               {submitted && (
                 <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center gap-3 animate-fadeIn">
                   <Check size={18} className="text-emerald-400 shrink-0" />
-                  <span>Thank you for reaching out! Your message has been sent successfully.</span>
+                  <span>Thank you! Your message was dispatched to <strong>{profileData.email}</strong> with subject <strong>[Portfolio]</strong>.</span>
                 </div>
               )}
 
@@ -188,7 +210,7 @@ export default function Contact() {
                     <input
                       type="text"
                       required
-                      placeholder="e.g. John Doe"
+                      placeholder="e.g. Arafat"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-[#060608] border border-white/10 focus:border-indigo-500 text-xs text-white placeholder-gray-500 outline-none transition-colors"
@@ -200,7 +222,7 @@ export default function Contact() {
                     <input
                       type="email"
                       required
-                      placeholder="e.g. john@example.com"
+                      placeholder="e.g. arafat@gmail.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-[#060608] border border-white/10 focus:border-indigo-500 text-xs text-white placeholder-gray-500 outline-none transition-colors"

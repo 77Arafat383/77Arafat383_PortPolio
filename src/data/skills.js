@@ -38,18 +38,24 @@ export const skillsData = [
     description: "Designing efficient data models for relational and document databases.",
     skills: [
       { name: "MongoDB", level: "Advanced", detail: "Mongoose ODM, Aggregation Pipeline, Indexing", badge: "NoSQL" },
-      { name: "MySQL", level: "Intermediate", detail: "Relational Schemas, Constraints, Foreign Keys, Transactions", badge: "SQL RDBMS" }
+      { name: "MySQL", level: "Advanced", detail: "Relational Schemas, Constraints, Foreign Keys, Transactions", badge: "SQL RDBMS" },
+      { name: "PostgreSQL", level: "Intermediate", detail: "Relational Modeling, Indexing, Complex Queries, Transactions", badge: "SQL RDBMS" },
+      { name: "SQLite", level: "Intermediate", detail: "Lightweight Storage, Embedded Relational Database, SQL Queries", badge: "Embedded SQL" }
     ]
   },
   {
     category: "Developer Tools",
     icon: "Wrench",
-    description: "Development environment, version control, and testing tools.",
+    description: "Development environment, version control, testing, and deployment tools.",
     skills: [
       { name: "Git & GitHub", level: "Advanced", detail: "Branching, Pull Requests, Commits, Collaboration", badge: "Version Control" },
-      { name: "Postman", level: "Advanced", detail: "API Testing, Collection Runner, Header Specs", badge: "API Testing" },
+      { name: "Docker", level: "Intermediate", detail: "Containerization, Multi-stage Builds, Docker Compose", badge: "DevOps" },
+      { name: "Postman", level: "Advanced", detail: "API Testing, Collection Runner, Mock Servers, Header Specs", badge: "API Testing" },
       { name: "VS Code", level: "Advanced", detail: "Custom Setup, Snippets, Debugging, Extensions", badge: "IDE" },
-      { name: "Linux", level: "Intermediate", detail: "Bash Shell Commands, Environment Setup, Permissions", badge: "OS Environment" }
+      { name: "Linux & Bash", level: "Intermediate", detail: "Bash Shell Scripting, Permissions, SSH, Env Setup", badge: "OS Environment" },
+      { name: "Chrome DevTools", level: "Advanced", detail: "Network Analysis, DOM Inspection, Performance Profiling", badge: "Web Debugging" },
+      { name: "Vercel / Netlify", level: "Intermediate", detail: "Continuous Deployment, CI/CD, Domain & Env Configs", badge: "Cloud Hosting" },
+      { name: "GDB Debugger", level: "Intermediate", detail: "C++ Memory Inspection, Stack Traces, Breakpoints", badge: "CP Debugging" }
     ]
   },
   {
