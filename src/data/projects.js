@@ -62,60 +62,71 @@ export const projectsData = [
   {
     id: "supershop",
     title: "SuperShop",
-    subtitle: "Sales & Inventory Tracking System (RBMS)",
+    subtitle: "Modern Sales & Inventory Tracking System (RBMS)",
     category: "Full Stack",
     isFlagship: true,
-    tagline: "Enterprise-grade sales & inventory tracking platform with a sub-50ms POS terminal, 4-role RBAC, barcode generation, and supplier dues ledger.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma ORM", "PostgreSQL", "Supabase"],
+    tagline: "Enterprise-grade Sales, POS, and Inventory Management Platform (RBMS) featuring a sub-50ms POS terminal, 4-role RBAC, printable barcode label generator, supplier AP ledger, and software architecture diagrams.",
+    techStack: ["Next.js 14", "TypeScript", "React 18", "Tailwind CSS", "PostgreSQL", "Supabase", "JWT", "Recharts"],
     thumbnailGradient: "from-cyan-600/30 via-blue-600/20 to-indigo-500/10",
     bannerAccent: "#06b6d4",
     githubUrl: "https://github.com/77Arafat383/SuperShop",
     liveUrl: "https://github.com/77Arafat383/SuperShop",
     keyHighlights: [
-      "Ultra-Fast POS Terminal with sub-50ms interactions & laser barcode scanning",
-      "PostgreSQL Cloud Database hosted on Supabase with Prisma Schema migrations",
-      "Multi-Role RBAC (Administrator, Inventory Manager, Purchase Manager, Cashier)",
-      "Printable 80mm thermal receipts & A4 tax invoices with barcode generation"
+      "Sub-50ms POS Terminal with laser barcode scanning & multi-payment engine (bKash/Nagad OTP, Cash, Split)",
+      "4-Role RBAC (Admin, Inventory Mgr, Purchase Mgr, Cashier) with account approval queue & 1-click demo login",
+      "Printable 80mm thermal receipts & formal A4 tax invoices with barcode generation & itemized tax breakdown",
+      "Supplier AP Ledger with multi-item PO workflow (Draft ➔ Received), partial payment tracking & money receipts",
+      "Executive Analytics dashboard with Recharts revenue charts, Gross Margins, COGS, & 1-click CSV exports",
+      "Integrated Software Architecture tab featuring DFDs (L0-L2), ERD, Class Diagram, CPM & COCOMO II metrics"
     ],
     caseStudy: {
-      overview: "SuperShop is an advanced Sales & Inventory Tracking System built for CSTE 3208 at NSTU. It uses Next.js, Prisma ORM, and PostgreSQL hosted on Supabase to automate point-of-sale transactions, inventory adjustments, purchase orders, supplier ledgers, and financial auditing.",
-      problem: "Retail supershops struggle with slow billing terminals, inaccurate inventory counts, unrecorded supplier dues, and lack of real-time role-based access control.",
-      solution: "SuperShop provides an ultra-fast sub-50ms POS terminal with barcode scanning, automated stock deduction, supplier purchase order management with partial/credit dues, and 80mm thermal receipt generation.",
+      overview: "SuperShop is a full-stack, enterprise-grade Sales, Point-of-Sale (POS), and Inventory Management Platform (RBMS) built using Next.js 14 (App Router), TypeScript, React 18, Tailwind CSS, and PostgreSQL hosted on Supabase Cloud. Designed to streamline retail operations, it automates stock workflows, sub-50ms POS billing, multi-channel payment authorization, supplier accounts payable ledgers, customer returns, and executive analytics. Developed for Software Engineering & Information System Design Lab (CSTE 3208) at NSTU under the supervision of Dr. Nazia Majadi.",
+      problem: "Retail supershops face severe operational pain points: slow billing terminals causing checkout queues, manual stock tracking causing stockouts, untracked supplier dues/credit balances, insecure multi-user access, and lack of real-time financial auditing.",
+      solution: "SuperShop resolves retail bottlenecks with an ultra-fast sub-50ms POS terminal featuring barcode simulation, dual thermal/A4 receipt generation, 4-role RBAC security with admin approval queues, automated low-stock threshold triggers, multi-item purchase orders with supplier AP ledgers, and interactive executive financial dashboards.",
       features: [
-        { title: "Ultra-Fast POS Terminal", desc: "Supports sub-50ms response times, barcode scanning, item discounts, cash change calculation, and split payments." },
-        { title: "4-Role RBAC Governance", desc: "Administrator approval flow, Inventory Manager stock corrections, Purchase Manager supplier ledgers, and Cashier billing." },
-        { title: "Supplier & Purchase Orders", desc: "Multi-product PO generation with Full Payment, Partial Advance, or Credit/Due terms, plus money receipt history." },
-        { title: "Software Architecture Tab", desc: "Interactive showcase for Use Case diagrams, DFDs (Level 0, 1, 2), ERD, Class Diagrams, CPM Network Schedule, and COCOMO metrics." }
+        { title: "Sub-50ms POS Terminal & Multi-Payment", desc: "Laser scanning simulation, real-time product filtering, dual receipt engine (80mm thermal receipts & A4 tax invoices with barcodes), and payment support for Cash, bKash & Nagad OTP/PIN modal, Card authorization simulator, and Split payments." },
+        { title: "4-Role RBAC Governance & Demo Switcher", desc: "4 operational roles (Administrator, Inventory Manager, Purchase Manager, Cashier) with registration approval queue, user promotion/demotion, and a 1-click interactive demo login switcher." },
+        { title: "Advanced Inventory & Barcode Labels", desc: "Catalog control with SKUs, category hierarchies, low-stock visual alerts (min_stock_level), printable barcode sticker sheets, and detailed stock adjustment audit logs (Stock In/Out/Correction)." },
+        { title: "Supplier AP & Purchase Orders", desc: "Supplier directory mapping with wholesale pricing and MOQ, multi-item PO workflow (Draft ➔ Requested ➔ Accepted ➔ Received), partial/credit payment tracking, and automated money receipt generation." },
+        { title: "Customer Returns & Automated Restocking", desc: "Invoice-linked product return logging, automated inventory restocking upon approval, refund payout tracking, and product-level return rate metrics." },
+        { title: "Executive Analytics & Architecture Tab", desc: "Recharts sales velocity charts, Gross Profit Margins, COGS calculations, 1-click CSV data export, and built-in Software Engineering diagrams (DFDs L0-L2, ERD, Class Diagram, CPM, COCOMO II metrics)." }
       ],
       architecture: {
         nodes: [
-          { label: "Next.js Frontend", role: "POS Terminal UI & Role Dashboards" },
-          { label: "Prisma Data Layer", role: "Transactional Query Execution & Relational Models" },
-          { label: "PostgreSQL on Supabase", role: "Cloud Database Persistence for Products, Orders, Suppliers" },
-          { label: "Barcode & Receipt Engine", role: "Thermal 80mm & A4 Invoice Generation" }
+          { label: "Next.js 14 App Router", role: "Server Components, API Routing, and optimized layout streaming" },
+          { label: "TypeScript (Strict Mode)", role: "End-to-end interface contracts, type safety, and maintainability" },
+          { label: "PostgreSQL on Supabase", role: "12 core relational tables with foreign key constraints and indexed lookup paths" },
+          { label: "Auth & Security (JWT / bcrypt)", role: "Password hashing, JSON Web Token auth, and role-based middleware guards" },
+          { label: "Thermal & Invoice Printing Engine", role: "Sub-50ms receipt calculation, barcode generation, and printable CSS layouts" }
         ],
-        flow: "POS Item Scan ➔ Client State Calculation ➔ Multi-Payment Auth ➔ PostgreSQL (Supabase) Transaction ➔ Thermal Receipt Print"
+        flow: "POS Laser Item Scan ➔ Sub-50ms Cart State Update ➔ Multi-Payment Auth Modal ➔ PostgreSQL (Supabase) Transaction ➔ Stock Deduction & Audit Log ➔ Thermal 80mm / A4 Invoice Render"
       },
       databaseDesign: [
-        { collection: "Users & Roles (Table)", fields: "id, name, email, passwordHash, role (ADMIN, INVENTORY_MGR, PURCHASE_MGR, CASHIER), status" },
-        { collection: "Products & Barcodes (Table)", fields: "id, title, sku, barcode, costPrice, sellingPrice, stockQuantity, minStockThreshold" },
-        { collection: "Purchase Orders (Table)", fields: "id, supplierId, items [{productId, qty, unitPrice}], paymentType (FULL, PARTIAL, CREDIT), dueBalance" },
-        { collection: "Sales Transactions (Table)", fields: "id, cashierId, items, paymentMethod (CASH, BKASH, NAGAD, CARD, SPLIT), total, tax, discount" }
+        { collection: "users (Table)", fields: "id (PK), name, email, password_hash, role (ADMIN, INVENTORY_MGR, PURCHASE_MGR, CASHIER), status (PENDING, APPROVED)" },
+        { collection: "products & categories (Tables)", fields: "id (PK), title, sku, barcode, category_id (FK), cost_price, selling_price, discount, stock_quantity, min_stock_level" },
+        { collection: "sales & sale_items (Tables)", fields: "id (PK), invoice_number, cashier_id (FK), total_amount, payment_method (CASH, BKASH, NAGAD, CARD, SPLIT), product_id (FK), cost_price, quantity" },
+        { collection: "suppliers & purchase_orders (Tables)", fields: "id (PK), name, phone, total_due, purchase_id (PK), supplier_id (FK), status (DRAFT, REQUESTED, ACCEPTED, RECEIVED), total_amount, paid_amount, due_amount" },
+        { collection: "purchase_payments & returns (Tables)", fields: "id (PK), purchase_id (FK), amount_paid, remaining_due, return_id (PK), sale_id (FK), product_id (FK), refund_amount, restock_flag, return_reason" }
       ],
       challenges: [
         {
-          challenge: "Ensuring instant sub-50ms billing interactions without UI lag during heavy item scanning.",
-          solution: "Optimized client-side state caching with React hooks and keyboard event listeners for immediate barcode detection."
+          challenge: "Ensuring instant sub-50ms billing terminal response times without UI lag during heavy item scanning.",
+          solution: "Optimized client-side state hooks with keyboard barcode event listeners, local product lookup caching, and debounced inventory query updates."
         },
         {
-          challenge: "Tracking partial advance and remaining supplier credit balances accurately over time.",
-          solution: "Designed a supplier ledger system in PostgreSQL on Supabase that logs money receipts with previous balance history, payment date, and updated dues."
+          challenge: "Managing multi-item supplier accounts payable (AP) ledgers with partial advance payments and dynamic due balances.",
+          solution: "Built an immutable payment ledger schema linking purchase orders to purchase_payments, automatically recalculating supplier total_due upon each transaction."
+        },
+        {
+          challenge: "Securing multi-role operations and preventing unauthorized access across 4 distinct user personas.",
+          solution: "Implemented JWT token authentication with role-based middleware guards, self-registration approval queues, and granular permission enforcement."
         }
       ],
       learnings: [
-        "Building production-ready Point of Sale (POS) terminals with keyboard shortcuts and laser barcode support.",
-        "Deploying relational database schemas with Prisma ORM to Supabase cloud PostgreSQL.",
-        "Designing complete software engineering documentation artifacts (DFDs, ERD, COCOMO estimation)."
+        "Designing enterprise Point of Sale (POS) terminals with sub-50ms responsiveness, multi-channel payment authorization, and barcode label generation.",
+        "Structuring scalable PostgreSQL relational schemas on Supabase with foreign key constraints across 12 core tables.",
+        "Implementing strict Role-Based Access Control (RBAC) and admin approval workflows in Next.js 14 App Router.",
+        "Building software engineering design artifacts including DFD levels 0-2, ERD schemas, Class Diagrams, COCOMO II cost estimation, and CPM scheduling."
       ]
     }
   },

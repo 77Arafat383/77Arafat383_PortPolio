@@ -46,16 +46,12 @@ export const skillsData = [
   {
     category: "Developer Tools",
     icon: "Wrench",
-    description: "Development environment, version control, testing, and deployment tools.",
+    description: "Development environment, version control, and testing tools.",
     skills: [
       { name: "Git & GitHub", level: "Advanced", detail: "Branching, Pull Requests, Commits, Collaboration", badge: "Version Control" },
-      { name: "Docker", level: "Intermediate", detail: "Containerization, Multi-stage Builds, Docker Compose", badge: "DevOps" },
-      { name: "Postman", level: "Advanced", detail: "API Testing, Collection Runner, Mock Servers, Header Specs", badge: "API Testing" },
+      { name: "Postman", level: "Advanced", detail: "API Testing, Collection Runner, Header Specs", badge: "API Testing" },
       { name: "VS Code", level: "Advanced", detail: "Custom Setup, Snippets, Debugging, Extensions", badge: "IDE" },
-      { name: "Linux & Bash", level: "Intermediate", detail: "Bash Shell Scripting, Permissions, SSH, Env Setup", badge: "OS Environment" },
-      { name: "Chrome DevTools", level: "Advanced", detail: "Network Analysis, DOM Inspection, Performance Profiling", badge: "Web Debugging" },
-      { name: "Vercel / Netlify", level: "Intermediate", detail: "Continuous Deployment, CI/CD, Domain & Env Configs", badge: "Cloud Hosting" },
-      { name: "GDB Debugger", level: "Intermediate", detail: "C++ Memory Inspection, Stack Traces, Breakpoints", badge: "CP Debugging" }
+      { name: "Linux", level: "Intermediate", detail: "Bash Shell Commands, Environment Setup, Permissions", badge: "OS Environment" }
     ]
   },
   {
